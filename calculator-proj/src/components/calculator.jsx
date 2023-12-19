@@ -1,30 +1,46 @@
 import React from "react";
 import "./calculator.css";
 import styled from "styled-components";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Calculator = () => {
   return (
     <>
-      <StyledSection>
-        <section>
-          <div className="sectionOne">Hello</div>
-        </section>
-      </StyledSection>
+      <section>
+        <div className="section-style">
+          <div className="header">
+            <GiHamburgerMenu />
+            <p>My Calculator</p>
+          </div>
+          <div className="input-box">
+            <input type="text" placeholder="0" className="input-field" />
+          </div>
+          <div className="keypad">
+            <button className="keypad-number">AC</button>
+            <button className="keypad-number">/</button>
+            <button className="keypad-number">%</button>
+            <button className="keypad-number">÷</button>
+            <button className="keypad-number">7</button>
+            <button className="keypad-number">8</button>
+            <button className="keypad-number">9</button>
+            <button className="keypad-number">x</button>
+            <button className="keypad-number">4</button>
+            <button className="keypad-number">5</button>
+            <button className="keypad-number">6</button>
+            <button className="keypad-number">-</button>
+            <button className="keypad-number">1</button>
+            <button className="keypad-number">2</button>
+            <button className="keypad-number">3</button>
+            <button className="keypad-number">+</button>
+            <button className="keypad-number">0</button>
+            <button className="keypad-number">2</button>
+            <button className="keypad-number">,</button>
+            <button className="keypad-number">=</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
-
-const StyledSection = styled.section`
-  background-color: gray;
-  height: 100vh;
-  width: 100vw;
-  color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  max-width: 390px;
-  max-height: 800px;
-  overflow: hidden;
-  text-align: center;
-`;
 
 export default Calculator;
