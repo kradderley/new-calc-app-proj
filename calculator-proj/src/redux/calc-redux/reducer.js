@@ -1,13 +1,14 @@
 import { initialState } from "../initialState";
 import { GEN_BUTTON, GEN_NEW_ANS, CLEAR_SCREEN, BACK_SPACE } from "./types";
 
-export const reducer = (state = initialState, action) => {
+export const CALC_KEY = "calculatorStore";
 
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GEN_BUTTON:
       return {
         ...state,
-        ...payload,
+        ...action.payload,
         number: state.number.concat(action.payload),
       };
 
@@ -15,13 +16,13 @@ export const reducer = (state = initialState, action) => {
       try {
         return {
           ...state,
-          ...payload,
+          ...action.payload,
           answer: eval(state.number).toString(),
         };
       } catch (error) {
         return {
           ...state,
-          ...payload,
+          ...action.payload,
           answer: "E",
         };
       }
@@ -29,14 +30,15 @@ export const reducer = (state = initialState, action) => {
     case CLEAR_SCREEN:
       return {
         ...state,
-        ...payload,
-        initialState,
+        ...action.payload,
+        number: "",
+        answer: "",
       };
 
     case BACK_SPACE:
       return {
         ...state,
-        ...payload,
+        ...action.payload,
         number: state.number.slice(0, -1),
         answer: "",
       };

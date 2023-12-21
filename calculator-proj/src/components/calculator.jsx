@@ -8,10 +8,14 @@ import {
   generateButton,
   generateNewAns,
 } from "../redux/calc-redux/actions";
+import { CALC_KEY } from "../redux/calc-redux/reducer";
 
 const Calculator = () => {
   const dispatch = useDispatch();
-  
+
+  const answerDisplay = useSelector((state) => {
+    return state[CALC_KEY];
+  });
 
   return (
     <>
@@ -22,7 +26,16 @@ const Calculator = () => {
             <p>My Calculator</p>
           </div>
           <div className="input-box">
-            <input type="text" placeholder="0" className="input-field" />
+            <input
+              type="text"
+              placeholder="0"
+              className="input-field"
+              value={
+                answerDisplay.answer.length === 0
+                  ? answerDisplay.number
+                  : answerDisplay.answer
+              }
+            />
           </div>
           <div className="keypad">
             <button
@@ -37,7 +50,12 @@ const Calculator = () => {
             >
               C
             </button>
-            <button className="keypad-number signs">%</button>
+            <button
+              onClick={() => dispatch(generateButton("*100"))}
+              className="keypad-number signs"
+            >
+              %
+            </button>
             <button
               onClick={() => dispatch(generateButton("/"))}
               className="keypad-number signs"
@@ -123,10 +141,10 @@ const Calculator = () => {
               0
             </button>
             <button
-              onClick={() => dispatch(generateButton(","))}
+              onClick={() => dispatch(generateButton("."))}
               className="keypad-number signs"
             >
-              ,
+              .
             </button>
             <button
               onClick={() => dispatch(generateNewAns())}
