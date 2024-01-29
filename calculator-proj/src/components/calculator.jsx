@@ -1,6 +1,6 @@
 import React from "react";
 import "./calculator.css";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FaCalculator } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import {
   backSpace,
@@ -9,6 +9,7 @@ import {
   generateNewAns,
 } from "../redux/calc-redux/actions";
 import { CALC_KEY } from "../redux/calc-redux/reducer";
+import Display from "./Display";
 
 const Calculator = () => {
   const dispatch = useDispatch();
@@ -22,21 +23,10 @@ const Calculator = () => {
       <section>
         <div className="section-style">
           <div className="header">
-            <GiHamburgerMenu />
+            <FaCalculator />
             <p>My Calculator</p>
           </div>
-          <div className="input-box">
-            <input
-              type="text"
-              placeholder="0"
-              className="input-field"
-              value={
-                answerDisplay.answer.length === 0
-                  ? answerDisplay.number
-                  : answerDisplay.answer
-              }
-            />
-          </div>
+         <Display/>
           <div className="keypad">
             <button
               onClick={() => dispatch(clearScreen())}
@@ -90,7 +80,7 @@ const Calculator = () => {
               onClick={() => dispatch(generateButton(4))}
               className="keypad-number"
             >
-              4
+                4
             </button>
             <button
               onClick={() => dispatch(generateButton(5))}
