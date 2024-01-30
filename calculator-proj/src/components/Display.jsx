@@ -8,6 +8,8 @@ const Display = () => {
     return state[CALC_KEY];
   });
 
+  console.log(answerDisplay);
+
   return (
     <>
       <div className="input-box">
