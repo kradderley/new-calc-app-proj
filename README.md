@@ -1,8 +1,16 @@
-# React + Vite
+# My Calculator App 
+This portfolio project uses React / React- Redux, along with elements of HTML, CSS and Javascript to display basic calculator functions. The purpose behing this project was to quickly showcase my knowledge of state management using redux. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Dependencies Installed 
+- npm install 
+- npm i react react-redux 
+- npm i redux 
+- npm i react-icons
 
-Currently, two official plugins are available:
+# Run the app 
+- npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How to Use 
+- This project functions as a basic calculator. Once a number is clicked on the keypad, the input will be displayed on the screen above. 
+- If further calculations need to be performed without clearing a previous answer, the operation will continue on the top input box with the final answer displayed on the lower input box. 
+- To clear the operation, you would click 'C'. To backspace or erase a single entry, perhaps due to a mistake, you would click 'AC'.  

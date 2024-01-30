@@ -8,30 +8,28 @@ const Display = () => {
     return state[CALC_KEY];
   });
 
-  console.log(answerDisplay.answer.length); 
-  console.log(answerDisplay.number); 
-  console.log(answerDisplay.answer); 
 
   return (
     <>
-      <div className="input-box">
+      <div className="calculation-box">
         <input
           type="text"
-          placeholder="0" 
-          className="input-field"
+          placeholder=""
+          className="input-field-one"
           value={
-            answerDisplay.answer.length === 0 
+            answerDisplay.answer.length >= 0
               ? answerDisplay.number
               : answerDisplay.answer
           }
         />
       </div>
-      <div >
+      <div className="input-box">
         <input
           type="text"
-          placeholder="0" 
+          placeholder="0"
+          className="input-field-two"
           value={
-            answerDisplay.answer.length > 0 
+            answerDisplay.answer.length === 0
               ? answerDisplay.number
               : answerDisplay.answer
           }

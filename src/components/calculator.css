@@ -22,20 +22,28 @@
 
 .input-box {
   width: 99%;
-  margin-top: 20px;
+  margin-top: 3px; 
   margin-bottom: 10px;
-  /* margin-left: 10px; 
-  margin-right: 10px;  */
 }
 
-.input-field {
-  width: 99%;
-  height: 80px;
+.calculation-box {
+margin-right: 4px; 
+}
+
+
+.input-field-one, 
+.input-field-two {
+  width: 95%;
   border-radius: 5px;
   border-color: white;
   border-width: 1px;
   font-size: 50px;
   text-align: right;
+}
+
+.input-field-one {
+  font-size: 30px; 
+  color: #D3D3D3; 
 }
 
 .keypad {
