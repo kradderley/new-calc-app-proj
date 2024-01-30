@@ -1,5 +1,10 @@
 import { initialState } from "../initialState";
-import { GEN_BUTTON, GEN_NEW_ANS, CLEAR_SCREEN, BACK_SPACE } from "./types";
+import {
+  GEN_BUTTON,
+  GEN_NEW_ANS,
+  CLEAR_SCREEN,
+  BACK_SPACE,
+} from "./types";
 
 export const CALC_KEY = "calculatorStore";
 

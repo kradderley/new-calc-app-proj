@@ -8,6 +8,7 @@ export const generateNewAns = (number) => {
   };
 };
 
+
 export const generateButton = (number) => {
   return {
     type: GEN_BUTTON,
