@@ -8,7 +8,6 @@ const Display = () => {
     return state[CALC_KEY];
   });
 
-
   return (
     <>
       <div className="calculation-box">
@@ -16,8 +15,8 @@ const Display = () => {
           type="text"
           placeholder=""
           className="input-field-one"
-          value={
-            answerDisplay.answer.length >= 0
+          defaultValue={
+            answerDisplay.answer.length !== 0
               ? answerDisplay.number
               : answerDisplay.answer
           }
@@ -28,7 +27,7 @@ const Display = () => {
           type="text"
           placeholder="0"
           className="input-field-two"
-          value={
+          defaultValue={
             answerDisplay.answer.length === 0
               ? answerDisplay.number
               : answerDisplay.answer
